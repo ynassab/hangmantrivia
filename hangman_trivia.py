@@ -1,5 +1,6 @@
 # Trivia-style hangman
 # Yahia Nasssab
+# August 2018
 
 
 #
@@ -62,7 +63,6 @@ no_space_button = ttk.Button(hangmanRoot)
 no_space_button.unbind_class("TButton", "<Key-space>")
     
     
-    
 # Choose difficulty
 def chosen_difficulty(difficulty):
         
@@ -90,11 +90,7 @@ def chosen_difficulty(difficulty):
 
 
 
-
-
-
 ## CREATING WIDGETS
-
 
 
 # Label commands:
@@ -123,7 +119,6 @@ def main_menu(event = None):
     home_page.lift()
     
     return
-
 
 
 
@@ -159,7 +154,6 @@ highScoreLabel.pack(side = "bottom", pady = 50)
 
 # Bind the 'Esc' key to the Main Menu button
 hangmanRoot.bind("<Escape>", lambda event: main_menu(event = event))
-
 
 
 
@@ -253,7 +247,6 @@ for letter in middle_button_row:
     NormalButton(letter, middle_button_xcoord, middle_button_ycoord)
     middle_button_xcoord += 75
     
-
     
 bottom_button_row = list("ZXCVBNM")    
 bottom_button_xcoord = 150
@@ -275,9 +268,7 @@ full_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 for letter in list(full_alphabet):
     bind_key(letter)
 
-    
-        
-    
+       
     
     
 ## MAIN GAME FUNCTIONALITY
@@ -424,7 +415,6 @@ def reset_game(wonGame = False):
         new_game = NewGame(wonGame = True)
     
     return
-
 
 
 
@@ -577,7 +567,6 @@ def player_input(input_letter):
         letterFound = False
         
     return
-
 
 
 

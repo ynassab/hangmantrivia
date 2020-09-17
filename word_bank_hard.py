@@ -65,7 +65,7 @@ bank = {
     
     # History
     "AGINCOURT": "Major English victory in the Hundred Years War - 25 October 1415",
-    "HASTINGS": "Battle that began a Norman conquest of England - 14 1066",
+    "HASTINGS": "Battle that began a Norman conquest of England - 14 October 1066",
     "HADRIAN": "Roman Emperor that ordered the building of a wall to keep Picts and Scots out of England",
     "MACBETH": "King of Scotland between 1040 and 1057",
     "FIDEL CASTRO": "Led an attack on the Moncada Army Barracks on July 26 1953",

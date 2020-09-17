@@ -25,7 +25,7 @@ bank = {
     "CARPET": "Hair for your floor",
     "APPLE JUICE": "iPhone chargers",
     "CLAPPING": "High-fiving yourself",
-    "CANADIAN GEESE": "Canadian cobra chickens",
+    "CANADA GEESE": "Canadian cobra chickens",
     "CUTLERY": "Food weapons",
     "GIRAFFES": "leopard-moose-camels with six-foot necks",
     
@@ -44,7 +44,7 @@ bank = {
     # Shower thoughts
     
     "JAPAN": "Has a flag that is a pie chart of how much of itself is itself",
-    "CANADIAN GEESE": "Proof that dinosaurs would still be scary with feathers",
+    "CANADA GEESE": "Proof that dinosaurs would still be scary with feathers",
     "ANTARCTICA": "Island that only has a northern coast",
     "BAYONET": "Bringing a knife to a gun fight",
     "VAMPIRES": "If telescopes work using mirrors, then you'll never know if these exist in space",

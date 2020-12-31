@@ -35,7 +35,7 @@ bank = {
 	"BURRITO": "Food whose name comes from the word for \"donkey\" in Spanish",
 	"LACTOSE": "Milk disaccharide",
 	"STURGEON": "Family of fish whose roe produces caviar",
-	"MONOSODIUM GLUTAMATE": "MSG stands for:",
+	"MONOSODIUM GLUTAMATE": "MSG, the food ingredient, stands for:",
 	"SUCCOTASH": "North American Indian dish made from corns and beans",
 	
 	# Geography

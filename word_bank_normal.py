@@ -63,7 +63,7 @@ bank = {
 	"THE GREAT PYRAMIDS OF GIZA": "Wonder built by the ancient Egypts",
 	"PEARL HARBOR": "The bombing of this military base lead the U.S. to join WWII",
 	"BERLIN WALL": "Erected between East and West Germany in 1961",
-	"INDIA": "Gained independence from England on August 15, 1947"
+	"INDIA": "Gained independence from England on August 15, 1947",
 	
 	# Linguistics
 	"ASTERISK": "Name for this character: *",

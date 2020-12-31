@@ -21,11 +21,11 @@ from word_bank_hard import bank as hard_bank
 from word_bank_drunk import bank as drunk_bank
 
 # Set up the window
-handman_root = Tk()
-handman_root.title("Hangman Trivia")
-windowWidth = 850
-windowHeight = 500
-handman_root.geometry("{}x{}".format(windowWidth, windowHeight))
+hangman_root = Tk()
+hangman_root.title("Hangman Trivia")
+window_width = 850
+window_height = 500
+hangman_root.geometry("{}x{}".format(window_width, window_height))
 
 # Create pages
 game_page = Frame()
@@ -39,7 +39,6 @@ home_page.place(x = 0, y =0, relwidth = 1, relheight = 1)
 # I think it's a little cleaner to have global variables as class member attributes rather than using the "global" keyword
 class Globals():
 	pass
-# global_vars = GlobalVars()
 
 
 ## Minor bug fixes
@@ -49,7 +48,7 @@ class WordBank: # Prevent the debugger from screaming at me because there's no i
 	word_bank = {"":""}
 	
 # Unbind the spacebar from every button (creates a dummy button that doesn't appear on the root)
-no_space_button = ttk.Button(handman_root)
+no_space_button = ttk.Button(hangman_root)
 no_space_button.unbind_class("TButton", "<Key-space>")
 
 def chosen_difficulty(difficulty): # Choose difficulty
@@ -72,8 +71,8 @@ def chosen_difficulty(difficulty): # Choose difficulty
 
 
 def finished(): # Create a function for the button to close the app
-	handman_root.destroy()
-	handman_root.quit()
+	hangman_root.destroy()
+	hangman_root.quit()
 	return
 
 # Button to return to home screen
@@ -92,8 +91,8 @@ def main_menu(event = None): # event arg gives ability to be bound to a key
 	return
 
 # Create some text on the home page for the user
-difficultyLabel = Label(home_page, text = "Choose your difficulty:")
-tipLabel = Label(home_page, text = "Tip: you can use your keyboard to guess letters")
+difficulty_label = Label(home_page, text = "Choose your difficulty:")
+tip_label = Label(home_page, text = "Tip: you can use your keyboard to guess letters")
 
 # Main buttons
 home_button = ttk.Button(game_page, text = "Main Menu", command = main_menu) # Return to the home page
@@ -108,13 +107,13 @@ Globals.high_score = 0
 home_button.pack(side = "left", anchor = "s")
 exit_button_home.pack(side = "right", anchor = "s")
 exit_button_game.pack(side = "right", anchor = "s")
-difficultyLabel.pack(side = "top", pady = 20)
-tipLabel.pack(side = "bottom", pady = 50)
+difficulty_label.pack(side = "top", pady = 20)
+tip_label.pack(side = "bottom", pady = 50)
 Globals.highscore_label.pack(side = "bottom", pady = 50)
 
-handman_root.bind("<Escape>", lambda event: main_menu(event = event)) # Bind the 'Esc' key to the Main Menu button
+hangman_root.bind("<Escape>", lambda event: main_menu(event = event)) # Bind the 'Esc' key to the Main Menu button
 
-Globals.explainLabel = Label(home_page, text = "", font = "Times 12") # Let the window display explanatory text when hovering over a button
+Globals.explain_label = Label(home_page, text = "", font = "Times 12") # Let the window display explanatory text when hovering over a button
 
 class HoverButton(ttk.Button):
 	def __init__(self, master, explain_text = "", **kw):
@@ -124,30 +123,30 @@ class HoverButton(ttk.Button):
 		self.bind("<Leave>", self.on_leave)
 	
 	def on_enter(self, event):
-		Globals.explainLabel['text'] = self.explain_text
+		Globals.explain_label['text'] = self.explain_text
 		
 	def on_leave(self, event):
-		Globals.explainLabel['text'] = ""
+		Globals.explain_label['text'] = ""
 		
 # Create a button for each difficulty
-normalButton = HoverButton(home_page, 
+normal_button = HoverButton(home_page, 
 							explain_text = "To test your trivia knowledge. One clue - one possible answer",
 							text = "Normal", 
 							command = lambda difficulty = "normal": chosen_difficulty(difficulty))
-hardButton = HoverButton(home_page,
+hard_button = HoverButton(home_page,
 							explain_text = "For those who seek a greater challenge. Trivia-style: one clue - one possible answer",
 							text = "Hard", 
 							command = lambda difficulty = "hard": chosen_difficulty(difficulty))
-drunkButton = HoverButton(home_page, 
+drunk_button = HoverButton(home_page, 
 							explain_text = "More akin to classic Hangman",
 							text = "Drunk", 
 							command = lambda difficulty = "drunk": chosen_difficulty(difficulty))
 
 # Place the home page elements on the window
-normalButton.pack(side = "top", pady = 5)
-hardButton.pack(side = "top", pady = 5)
-drunkButton.pack(side = "top", pady = 5)
-Globals.explainLabel.pack(side = "top", pady = 15)
+normal_button.pack(side = "top", pady = 5)
+hard_button.pack(side = "top", pady = 5)
+drunk_button.pack(side = "top", pady = 5)
+Globals.explain_label.pack(side = "top", pady = 15)
 
 home_page.lift() # Make the home page visible above the game page
 
@@ -156,12 +155,12 @@ home_page.lift() # Make the home page visible above the game page
 
 
 # Create a button for each letter
-def normal_button(buttonText, xCoord, yCoord):
-	# buttonText: string object displayed on the button
+def normal_button(button_text, xCoord, yCoord):
+	# button_text: string object displayed on the button
 	# xCoord: x-coordinate (integer) on the window
 	# yCoord: y-coordinate (integer) on the window
-	button = ttk.Button(game_page, text = buttonText, # Call the player_input function with the chosen letter
-						command = lambda letter = buttonText: player_input(letter))
+	button = ttk.Button(game_page, text = button_text,
+						command = lambda letter = button_text: player_input(letter)) # Call the player_input function with the chosen letter
 	button.place(x = xCoord, y = yCoord)
 	return
 
@@ -188,7 +187,7 @@ for letter in bottom_button_row:
 
 def bind_key(key_symbol): # Allow user keyboard input in addition to GUI button usage
 	# Bind a key to player_input call with the letter on the key as an argument
-	handman_root.bind(key_symbol, lambda event, letter = key_symbol: player_input(letter))
+	hangman_root.bind(key_symbol, lambda event, letter = key_symbol: player_input(letter))
 	return
 	
 # Bind each appropriate key to corresponding letter
@@ -206,7 +205,7 @@ def choose_word(): # Randomly choose the word
 	return Globals.word_choice
 
 class NewGame():
-	def __init__(self, wonGame = False):
+	def __init__(self, won_game = False):
 		
 		word = list( choose_word() ) # Convert word to list for ease of manipulation
 		display_list = ["_ " for letter in word] # Create a series of blanks corresponding to letters in word
@@ -244,7 +243,7 @@ class NewGame():
 						font = "Times 12")
 		wrong_label.pack(side = "top", pady = 15)
 		
-		if wonGame == False: # If the player loses the game, or if new game, set each count to 0
+		if won_game == False: # If the player loses the game, or if new game, set each count to 0
 			Globals.strike_count = 0 # Reset strike count
 			Globals.strike_label = Label(game_page, # Where the current strike count will display
 								text = "Strikes: 0 of 7",
@@ -268,24 +267,24 @@ class NewGame():
 		self.wrong_label = wrong_label
 		return
 
-def reset_game(wonGame = False): # Remove GUI elements of an old game, destroy old game, and start new game
+def reset_game(won_game = False): # Remove GUI elements of an old game, destroy old game, and start new game
 		
 	Globals.new_game.word_label.destroy()
 	Globals.new_game.update_label.destroy()
 	Globals.new_game.clue_label.destroy()
 	Globals.new_game.wrong_label.destroy()
 	
-	if wonGame == False: # If the player lost the game, reset the strike count:
+	if won_game == False: # If the player lost the game, reset the strike count:
 		Globals.strike_label.destroy()
 		Globals.score_label.destroy()
 	
 	del Globals.new_game
 	Globals.stop_input = False
 	
-	if wonGame == False: # Determine if the strike count is reset
+	if won_game == False: # Determine if the strike count is reset
 		Globals.new_game = NewGame()
 	else:
-		Globals.new_game = NewGame(wonGame = True)
+		Globals.new_game = NewGame(won_game = True)
 	
 	return
 
@@ -388,10 +387,10 @@ def player_input(input_letter): # Process user input
 			
 			update_score() # Update the current score and the high score
 			Globals.stop_input = True # Prevent player input while the game is resetting
-			game_page.after(win_wait_time*1000, lambda wonGame = True: reset_game(wonGame = wonGame)) # Start new game after the wait time
+			game_page.after(win_wait_time*1000, lambda won_game = True: reset_game(won_game = won_game)) # Start new game after the wait time
 		
 		letter_found = False
 		
 	return
 
-handman_root.mainloop() # Keep the GUI open until the user closes it
+hangman_root.mainloop() # Keep the GUI open until the user closes it

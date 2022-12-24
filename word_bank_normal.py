@@ -13,7 +13,7 @@ bank = {
 	"ROALD DAHL": "Wrote \"Charlie and the Chocolate Factory\"",
 	"KATNISS EVERDEEN": "Protagonist in the Hunger Games",
 	"KRYPTON": "Superman's birth planet",
-	"WORLD WAR Z": "Maz Brooks novel that is an oral history of a zombie war",
+	"WORLD WAR Z": "Max Brooks novel that is an oral history of a zombie war",
 	
 	# Film
 	"BRAIN": "What the scarecrow wanted in the Wizard of Oz",
@@ -40,12 +40,12 @@ bank = {
 	"CHILE": "More than half of the West South American coastline",
 	"PERU": "Machu Picchu country",
 	"DAMASCUS": "Oldest city in the world",
-	"CANADA": "Longest coastline",
-	"SEINE": "River in Paris",
+	"CANADA": "Country: longest coastline",
+	"SEINE": "Longest river flowing through Paris",
 	"VATICAN CITY": "Smallest independent country on Earth",
 	"MARIANA TRENCH": "Deepest place on Earth",
 	"BOLIVIA": "Country named after Simon Bolivar",
-	"RING OF FIRE": "Region where many most of the world's volcanic eruptions occur",
+	"RING OF FIRE": "Region in the Pacific Ocean where most of the world's volcanic eruptions occur",
 	"GERMANY": "Munich, Cologne, Frankfurt",
 	"ENGLAND": "Manchester, Liverpool, Birmingham",
 	"SCOTLAND": "Edinburgh, Glasgow, Dundee",
@@ -60,8 +60,8 @@ bank = {
 	"AUSTIN": "Capital of Texas, United States",
 	
 	# History
-	"THE GREAT PYRAMIDS OF GIZA": "Wonder built by the ancient Egypts",
-	"PEARL HARBOR": "The bombing of this military base lead the U.S. to join WWII",
+	"THE GREAT PYRAMID OF GIZA": "Stood as the tallest structure on Earth for more than 4,000 years",
+	"PEARL HARBOR": "The bombing of this military base lead to the U.S. joining WWII",
 	"BERLIN WALL": "Erected between East and West Germany in 1961",
 	"INDIA": "Gained independence from England on August 15, 1947",
 	
@@ -69,10 +69,10 @@ bank = {
 	"ASTERISK": "Name for this character: *",
 	"TILDE": "Name for this character: ~",
 	"GERMANIC": "Language family that English falls under",
-	"ROMANTIC": "Language family that Italian falls under",
-	"FARSI": "Another name for the Persian language",
-	"MANDARIN": "Most commonly spoken language in China",
-		
+	"ROMANCE": "Language family that Italian falls under",
+	"FARSI": "The Persian language: the name more commonly used by those who speak it",
+	"MANDARIN": "The most widely spoken dialect of the Chinese language family",
+	
 	# Music
 	"TAYLOR SWIFT": "Released the song \"I Knew You Were Trouble\" in 2012",
 	"MAROON 5": "Released the song \"Moves Like Jagger\" in 2010",
@@ -84,7 +84,7 @@ bank = {
 	
 	# People
 	"ALBERT EINSTEIN": "Physicist famous for his Theory of Special Relativity",
-	"NAPOLEON BONAPARTE": "Leader in the French Revolution",
+	"NAPOLEON BONAPARTE": "First Consul of the French Republic, but soon became the Emperor of the French",
 	"JULIUS CAESAR": "Roman politician and military general, stabbed 23 times",
 	"BENEDICT CUMBERBATCH": "Plays Sherlock Holmes in BBC's \"Sherlock\"",
 	"VIN DIESEL": "Real voice of \"I am Groot\"",
@@ -93,9 +93,9 @@ bank = {
 	"WARREN BUFFETT": "CEO of Berkshire Hathaway",
 	
 	# Phobias
-	"HEIGHTS": "Acrophobia is the fear of what?",
-	"BLOOD": "Hemophobia is the fear of what?",
-	"ANIMALS": "Zoophobia is the fear of what?",
+	"HEIGHTS": "Acrophobia: the fear of this",
+	"BLOOD": "Hemophobia: the fear of this",
+	"ANIMALS": "Zoophobia: the fear of this",
 	
 	# Biology
 	"BALL AND SOCKET": "The shoulder is this type of bone joint",
@@ -109,7 +109,7 @@ bank = {
 	
 	# Physics
 	"PHOTON": "A \"particle\" or \"packet\" of light",
-	"NEWTON": "SI unit for force",
+	"NEWTON": "Unit of force in the International System of Units (SI)",
 	
 	# Astronomy
 	"JUPITER": "Fifth planet from the Sun",

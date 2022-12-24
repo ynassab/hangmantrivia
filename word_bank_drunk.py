@@ -32,15 +32,14 @@ bank = {
 	"FUNGI": "A mushroom is a _____ to have at parties",
 	"POWER NAP": "Exercising your authority and sleeping on someone weaker than you",
 	"BROKER": "Person who makes you go broke",
-	"CATHOLIC": "Photons have mass. Therefore they are:",
+	"CATHOLIC": "Photons have mass. Therefore they are this",
 	"SOY MILK": "Milk introducing itself in Spanish",
 	"MOSES": "First person to use Ctrl-C",
 	"ODD NUMBERS": "Literally can't even.",
-	"TWITTER": "Voldemort has followers, not friends. Therefore, he uses:",
 	
 	# Shower thoughts
 	"JAPAN": "Has a flag that is a pie chart of how much of itself is itself",
-	"CANADA GEESE": "Proof that dinosaurs would still be scary with feathers", # Can't have double clues
+	# "CANADA GEESE": "Proof that dinosaurs would still be scary with feathers", # Can't have double clues
 	"ANTARCTICA": "Island that only has a northern coast",
 	"BAYONET": "Bringing a knife to a gun fight",
 	"VAMPIRES": "If telescopes work using mirrors, then you'll never know if these exist in space",

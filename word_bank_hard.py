@@ -41,10 +41,10 @@ bank = {
 	# Geography
 	"TIGRIS AND EUPHRATES": "The Fertile Crescent rivers",
 	"TUNISIA": "Real-life Tatouine, or Tataouine, in this country",
-	"ACONCAGUA": "Largest mountain in South America",
+	"ACONCAGUA": "Tallest mountain in South America",
 	"STRAIT OF GIBRALTAR": "Body of water between Spain and Morocco",
 	"ISTANBUL": "Only city in two continents",
-	"OLYMPUS MONS": "Largest volcano on Mars",
+	"OLYMPUS MONS": "Tallest volcano on Mars",
 	"URAL MOUNTAINS": "Boundary between Europe and Asia",
 	"AMAZON": "World's fastest river, by water volume discharge",
 	"TURKEY": "Anatolia, Bursa, Izmir",
@@ -61,7 +61,7 @@ bank = {
 	"AGINCOURT": "Major English victory in the Hundred Years War - 25 October 1415",
 	"HASTINGS": "Battle that began the Norman conquest of England - 14 October 1066",
 	"HADRIAN": "Roman Emperor that ordered the building of a wall to keep Picts and Scots out of England",
-	"MACBETH": "King of Scotland between 1040 and 1057",
+	"MACBETH": "King of Scotland between 1040 and 1057, and a Shakespearean character",
 	"FIDEL CASTRO": "Led an attack on the Moncada Army Barracks on July 26 1953",
 	
 	# Linguistics
@@ -70,10 +70,10 @@ bank = {
 	"IN SITU": "Latin for \"in its original place\"",
 	"ET CETERA": "Latin for \"and the rest\" (often abbreviated)",
 	"A PRIORI": "Latin for \"reasoning from causes to effects\"",
-	"AMPERSAND": "Name of this character: &",
-	"OCTOTHORPE": "Name of this character: #",
-	"CAROT": "Name of this character: ^",
-	"HIRAGANA": "One of the phonetic writing systems in Japanese which can be used as a pronounciation aid to kanji",
+	"AMPERSAND": "\"And, per se and\": &",
+	"OCTOTHORPE": "Name of this character, as first coined by Bell Telephone Laboratories: #",
+	"CARET": "Familiar, non-ASCII name of this character: ^",
+	"HIRAGANA": "The phonetic writing system in Japanese which can be used as a pronounciation aid to kanji",
 	
 	# Music
 	"TIME OF OUR LIVES": "Pitbull + Ne-Yo in 2014",

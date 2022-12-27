@@ -4,9 +4,11 @@
 
 # Currently known bugs:
 	# - Word bank answers cannot have multiple corresponding clues
+	# - Completing a word bank, then typing a letter creates a stall. Striking out after this makes starting a new game impossible without restarting the program
 # Other future changes:
-	# - On-screen keyboard should be packed in a frame so it moves when the window resizes. 
-	#	The frame should be centred width-wise and a fixed distance from the top.
+	# - On-screen keyboard should be packed in a frame so it moves when the window resizes. The frame should be centred width-wise and a fixed distance from the top.
+	# - Save high score between run instances in a save file
+	# - Save completed clues between run instances in a save file
 
 
 ## SETUP
@@ -130,15 +132,15 @@ class HoverButton(ttk.Button):
 		
 # Create a button for each difficulty
 normal_button = HoverButton(home_page, 
-							explain_text = "To test your trivia knowledge. One clue - one possible answer",
+							explain_text = "To test your trivia knowledge",
 							text = "Normal", 
 							command = lambda difficulty = "normal": chosen_difficulty(difficulty))
 hard_button = HoverButton(home_page,
-							explain_text = "For those who seek a greater challenge. Trivia-style: one clue - one possible answer",
+							explain_text = "For those who seek a greater challenge",
 							text = "Hard", 
 							command = lambda difficulty = "hard": chosen_difficulty(difficulty))
 drunk_button = HoverButton(home_page, 
-							explain_text = "More akin to classic Hangman",
+							explain_text = "Less trivia more thinking outside the box",
 							text = "Drunk", 
 							command = lambda difficulty = "drunk": chosen_difficulty(difficulty))
 

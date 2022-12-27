@@ -51,8 +51,8 @@ bank = {
 	
 	# Quotes
 	"GOOGLE STREET VIEW": "\"Yeah, just send someone to drive down every single road on the planet\"",
-	"LUIS SUAREZ": "\"But ref! I only bit someone like three times. If you consider all the games I've played, that's almost a perfect record!\"",
-	"LEEEROOOOOOOOY JENKINNNSSSS": "\"Alright chums, I'm back. Let's do this. *inhales*\"",
+	"LUIS SUAREZ": "\"Hey, I only bit someone 3 times. I've played over 500 games! That's ALMOST a perfect record!\" (Soccer striker)",
+	"LEEEROOOOOOOOY JENKINNNSSSS": "\"Alright chums, I'm back. Let's do this. *Inhales*\" (World of Warcraft player)",
 	"CELSIUS": "\"On a scale from 0 to 100, how hot is your water?\"",
 	"THE LOS ANGELES ANGELS": "\"The The Angels Angels\""
 	

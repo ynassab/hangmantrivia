@@ -36,10 +36,8 @@ bank = {
 	"APPLE": "Isaac Newton was inspired by this fruit falling on his head",
 
 	# Geography
-	"ANTARCTICA": "Largest continent",
 	"CHILE": "More than half of the West South American coastline",
 	"PERU": "Machu Picchu country",
-	"DAMASCUS": "Oldest city in the world",
 	"CANADA": "Country: longest coastline",
 	"SEINE": "Longest river flowing through Paris",
 	"VATICAN CITY": "Smallest independent country on Earth",

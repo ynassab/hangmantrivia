@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- jQuery for AJAX: HTTP to HTTPS -->
+<script src="https://code.jquery.com/jquery-latest.js"></script><html lang="en">
+<script src="hangmantrivia/scripts/hangmantrivia.js"></script>
+<script src="index/scripts/load_animations.js"></script>
+<script src="index/scripts/device_detection.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Allow Ajax to be used; upgrade HTTP to HTTPS -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+
+    <link href="hangmantrivia/styles/style.css" rel="stylesheet">
+    <link href="hangmantrivia/styles/animations.css" rel="stylesheet">
+
+    <title>Hangman Trivia</title>
+    <link rel="icon" type="image/x-icon" href="index/pictures/favicon.ico" />
+</head>
+
+<body>
+    <div id="landscape-warning-container">
+        <h2 id="landscape-warning">Please rotate your device 90 degrees!</h2>
+    </div>
+
+    <main class="phase-in">
+        <div id="yn-logo-container">
+            <a href="/projects" role="button">
+                <img id="yn-logo" src="index/pictures/favicon.png" />
+            </a>
+        </div>
+        <h1 id="game-title" class="phase-in">Hangman Trivia</h1>
+        <div style="height: 10vh"></div>
+        <div id="intro-page">
+            <h2 class="phase-in-delay-1">Choose your difficulty</h2>
+            <div class="phase-in-delay-2" id="difficulty-container">
+                <button class="difficulty-button" data-difficulty="normal">Normal</button>
+                <button class="difficulty-button" data-difficulty="hard">Hard</button>
+                <button class="difficulty-button" data-difficulty="drunk">Drunk</button>
+            </div>
+        </div>
+        <div id="game-page">
+            <h2 id="clue-display"></h2>
+            <h1 id="answer-display"></h1>
+            <h2 id="status-display"></h2>
+            <div id="scorestrike-display">
+                <div id="allscore-display" style="flex: 2">
+                    <h3 id="score-display"></h3>
+                    <h3 id="highscore-display"></h3>
+                </div>
+                <div style="flex: 3"></div>
+                <div id="allstrike-display" style="flex: 2">
+                    <h3 id="strike-display" style="color: var(--base-color-3)"></h3>
+                </div>
+            </div>
+        </div>
+        <footer id="copyright-notice">
+            <p>&#169; 2025 Yahia Nassab</p>
+        </footer>
+    </main>
+
+    <!-- Custom virtual keyboard for mobile devices -->
+    <div id="keyboard-container">
+        <div id="keyboard">
+            <!-- First row: QWERTYUIOP -->
+            <div class="keyboard-row">
+                <div class="keyboard-key">Q</div>
+                <div class="keyboard-key">W</div>
+                <div class="keyboard-key">E</div>
+                <div class="keyboard-key">R</div>
+                <div class="keyboard-key">T</div>
+                <div class="keyboard-key">Y</div>
+                <div class="keyboard-key">U</div>
+                <div class="keyboard-key">I</div>
+                <div class="keyboard-key">O</div>
+                <div class="keyboard-key">P</div>
+            </div>
+
+            <!-- Second row: ASDFGHJKL -->
+            <div class="keyboard-row" id="middle-keyboard-row">
+                <div class="keyboard-key">A</div>
+                <div class="keyboard-key">S</div>
+                <div class="keyboard-key">D</div>
+                <div class="keyboard-key">F</div>
+                <div class="keyboard-key">G</div>
+                <div class="keyboard-key">H</div>
+                <div class="keyboard-key">J</div>
+                <div class="keyboard-key">K</div>
+                <div class="keyboard-key">L</div>
+            </div>
+
+            <!-- Third row: ZXCVBNM + Shift + Backspace -->
+            <div class="keyboard-row" id="bottom-keyboard-row">
+                <div class="keyboard-key">Z</div>
+                <div class="keyboard-key">X</div>
+                <div class="keyboard-key">C</div>
+                <div class="keyboard-key">V</div>
+                <div class="keyboard-key">B</div>
+                <div class="keyboard-key">N</div>
+                <div class="keyboard-key">M</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

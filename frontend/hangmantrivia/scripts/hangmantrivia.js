@@ -1,13 +1,29 @@
+/**
+ * Hangman Trivia Frontend
+ *
+ * Provides the frontend interface for the hangman trivia web app. Handles user
+ * letter guessing (via physical or virtual keyboard), communicates with the backend
+ * to fetch trivia questions, and displays game state with visual feedback animations.
+ * Features mobile-responsive design with portrait mode enforcement and persistent
+ * high score tracking across varying difficulty levels.
+ *
+ * @author Yahia Nassab
+ */
+
 "use strict"
 
-// Store and manage DOM element references
+/**
+ * DOM Cache Class
+ *
+ * Manages references to frequently accessed DOM elements to improve performance
+ * by avoiding repeated querySelector calls during game execution.
+ */
 class DOMCache {
     constructor() {
         this.cacheElements();
     }
 
     cacheElements() {
-        // Cache all frequently accessed DOM elements
         this.clueDisplay = document.querySelector('#clue-display');
         this.answerDisplay = document.querySelector('#answer-display');
         this.statusDisplay = document.querySelector('#status-display');
@@ -48,6 +64,9 @@ const keyboardElemStyleDisplay = 'inline';
 
 const getDataAPIEndpoint = 'https://wbr1jh5ceh.execute-api.us-east-1.amazonaws.com/default/';
 
+/**
+ * Main initialization function - sets up the game when DOM is loaded
+ */
 document.addEventListener('DOMContentLoaded', async () => {
     DOM = new DOMCache();
 
@@ -104,6 +123,19 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 });
 
+/**
+ * Handles device orientation changes for mobile devices
+ *
+ * Enforces portrait mode for optimal gameplay experience. The game uses a custom
+ * virtual keyboard embedded in the web app instead of the device's built-in keyboard
+ * for two reasons:
+ * 1) The built-in keyboard takes up too much screen space
+ * 2) Maintaining focus on input elements to trigger the built-in keyboard was unreliable
+ *
+ * However, in landscape mode, the virtual keyboard would cover the clue and answer
+ * components, making the game unplayable. Therefore, portrait mode is required and
+ * a warning is displayed when the device is in landscape orientation.
+ */
 function handleOrientationChange() {
     if (screen.availHeight > screen.availWidth) {
         // Portrait mode
@@ -124,15 +156,30 @@ function handleOrientationChange() {
     }
 }
 
+/**
+ * Dispatches a keyboard event for virtual keyboard clicks
+ *
+ * Allows the virtual keyboard buttons to trigger the same handlers as physical
+ * keyboard input.
+ *
+ * @param {string} keyValue - The character value of the key to simulate
+ */
 function dispatchKeydownEvent(keyValue) {
     const event = new KeyboardEvent('keydown', {
         key: keyValue,
-        bubbles: true, // ensures the event bubbles up the DOM
+        bubbles: true,
         cancelable: true
     });
     document.dispatchEvent(event);
 }
 
+/**
+ * Handles the start of a new trivia clue/round
+ *
+ * Fetches a new trivia question from the backend API, updates the UI with the clue,
+ * and prepares the answer display with blanks. Manages localStorage for tracking
+ * seen answers and high scores.
+ */
 async function handleNewClue() {
     lockGame = false;
 
@@ -204,6 +251,14 @@ async function handleNewClue() {
     wrongGuesses = [];
 }
 
+/**
+ * Handles keyboard input for letter guessing
+ *
+ * Processes letter guesses, updates the display, tracks correct/incorrect guesses,
+ * manages strikes, and handles win/lose conditions.
+ *
+ * @param {KeyboardEvent} event - The keyboard event containing the pressed key
+ */
 function handleKeyPress(event) {
     const letter = event.key.toUpperCase();
     const answer = DOM.answerDisplay.getAttribute('data-answer');
@@ -291,16 +346,40 @@ function handleKeyPress(event) {
     }
 }
 
+/**
+ * Checks if a character is an uppercase letter
+ *
+ * @param {string} char - Character to check
+ * @returns {boolean} True if character is uppercase A-Z
+ */
 function isUpperCaseAlpha(char) {
     return typeof char === "string" && char.length === 1
         && (char >= "A" && char <= "Z");
 }
 
+/**
+ * Replaces a character at a specific index in a string
+ *
+ * @param {string} str - Original string
+ * @param {number} index - Index to replace at
+ * @param {string} chr - New character
+ * @returns {string} Modified string
+ */
 function setCharAt(str, index, chr) {
     if (index > str.length - 1) return str;
     return str.substring(0, index) + chr + str.substring(index + 1);
 }
 
+/**
+ * Constructs a display string with consistent spacing between characters
+ *
+ * Used for formatting the answer display and wrong guesses list with proper spacing.
+ *
+ * @param {string|Array} iterable - String or array to process
+ * @param {number} numSpaces - Number of spaces between characters
+ * @param {Function} callback - Function to process each character
+ * @returns {string} Formatted display string with HTML spaces
+ */
 function constructWithSpaces(iterable, numSpaces, callback) {
     let constructedDisplay = '';
     let spaceBuffer = '&nbsp;'.repeat(numSpaces);
@@ -314,6 +393,14 @@ function constructWithSpaces(iterable, numSpaces, callback) {
     return constructedDisplay;
 }
 
+/**
+ * Updates the player's score and checks for high score
+ *
+ * Adds points to the current score, updates the display with visual feedback,
+ * and handles high score tracking with localStorage persistence.
+ *
+ * @param {number} increment - Points to add to the score
+ */
 function updateScore(increment) {
     flashScore();
     score += increment;
@@ -326,6 +413,10 @@ function updateScore(increment) {
     }
 }
 
+/**
+ * Flashes the background color for visual feedback
+ * Currently unused but available for wrong guess indication
+ */
 function flashBackground() {
     let backgroundFlashClass = 'background-flash';
     document.body.classList.add(backgroundFlashClass);
@@ -334,6 +425,10 @@ function flashBackground() {
     }, flashRemovalTimeMilliseconds);
 }
 
+/**
+ * Flashes the score display when points are earned
+ * Provides visual feedback for correct guesses
+ */
 function flashScore() {
     let scoreFlashClass = 'score-flash';
     DOM.scoreDisplay.classList.add(scoreFlashClass);
@@ -342,6 +437,10 @@ function flashScore() {
     }, flashRemovalTimeMilliseconds);
 }
 
+/**
+ * Flashes the high score display when a new high score is achieved
+ * Provides visual feedback for high score milestones
+ */
 function flashHighScore() {
     let highScoreFlashClass = 'highscore-flash';
     DOM.highScoreDisplay.classList.add(highScoreFlashClass);
@@ -350,6 +449,10 @@ function flashHighScore() {
     }, flashRemovalTimeMilliseconds);
 }
 
+/**
+ * Flashes the strikes display when an incorrect guess is made
+ * Provides visual feedback for wrong answers
+ */
 function flashStrikes() {
     let strikeFlashClass = 'strike-flash';
     DOM.strikeDisplay.classList.add(strikeFlashClass);

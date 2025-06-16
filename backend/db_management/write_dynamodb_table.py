@@ -106,8 +106,9 @@ def update_table(bank, table):
 def main():
     """Main execution function that coordinates the table update process."""
     print('Starting...')
-    get_temporary_credentials()
     try:
+        get_temporary_credentials()
+
         ddb = boto3.resource('dynamodb', region_name='us-east-1')
         table_normal = ddb.Table(TABLE_NAME_NORMAL)
         table_hard = ddb.Table(TABLE_NAME_HARD)

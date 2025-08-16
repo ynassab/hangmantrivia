@@ -1,3 +1,6 @@
+![Backend Tests](https://github.com/ynassab/hangmantrivia/actions/workflows/backend_tests.yml/badge.svg)
+![Frontend Tests](https://github.com/ynassab/hangmantrivia/actions/workflows/frontend_tests.yml/badge.svg)
+
 # Hangman Trivia
 An engaging trivia game, hosted at https://yahianassab.com/hangmantrivia.
 

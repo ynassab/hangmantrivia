@@ -14,10 +14,9 @@ import os
 import subprocess
 import json
 
-# Word banks ignored by git
-from word_bank_normal import bank as bank_normal
-from word_bank_hard import bank as bank_hard
-from word_bank_drunk import bank as bank_drunk
+from .word_bank_normal import bank as bank_normal
+from .word_bank_hard import bank as bank_hard
+from .word_bank_drunk import bank as bank_drunk
 
 AWS_ACCOUNT_ID = os.environ['AWS_ACCOUNT_ID']
 
@@ -76,7 +75,7 @@ def remove_temporary_credentials():
             remove_temporary_credentials()  # Always cleanup
     """
     for env_variable in ['AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY', 'AWS_SESSION_TOKEN']:
-        os.environ.pop(env_variable)
+        os.environ.pop(env_variable, None)
 
 
 def update_table(bank, table):

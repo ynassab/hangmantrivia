@@ -1,0 +1,5 @@
+boto3==1.26.68
+moto==5.1.8
+pytest==7.4.2
+pytest-cov==4.0.0
+setuptools==65.6.3

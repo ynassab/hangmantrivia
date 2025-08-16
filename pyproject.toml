@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=80.9.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hangmantrivia"
+description = "Web application for playing trivia in a hangman style."
+authors = [
+    {name = "Yahia Nassab"}
+]
+classifiers = [
+    "Natural Language :: English",
+    "Topic :: Games/Entertainment :: Puzzle Games",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Only",
+]
+requires-python = "==3.12.*"
+dynamic = ["version"]
+dependencies = [
+    "boto3==1.26.68",
+]
+
+[project.optional-dependencies]
+testing = [
+    "moto==5.1.8",
+    "pytest==7.4.2",
+    "pytest-cov==4.0.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["backend"]
+
+[tool.pytest.ini_options]
+addopts = "--cov=backend --cov-report=term-missing"
+testpaths = [
+    "tests/backend",
+]

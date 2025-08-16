@@ -330,11 +330,11 @@ function handleKeyPress(event) {
         // Shorter words score more points
         if (answer.length <= 5) {
             updateScore(25);
-        } else if (5 < answer.length <= 10) {
+        } else if (5 < answer.length && answer.length <= 10) {
             updateScore(20);
-        } else if (10 < answer.length <= 15) {
+        } else if (10 < answer.length && answer.length <= 15) {
             updateScore(15);
-        } else if (15 < answer.length <= 20) {
+        } else if (15 < answer.length && answer.length <= 20) {
             updateScore(10);
         } else if (answer.length > 20) {
             updateScore(5);
@@ -459,4 +459,53 @@ function flashStrikes() {
     setTimeout(() => {
         DOM.strikeDisplay.classList.remove(strikeFlashClass);
     }, flashRemovalTimeMilliseconds);
+}
+
+// Export for testing
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        DOMCache,
+        handleOrientationChange,
+        dispatchKeydownEvent,
+        handleNewClue,
+        handleKeyPress,
+        isUpperCaseAlpha,
+        setCharAt,
+        constructWithSpaces,
+        updateScore,
+        flashScore,
+        flashHighScore,
+        flashStrikes,
+        flashBackground,
+        // Game state management for testing
+        getGameState: () => ({
+            chosenDifficulty,
+            seenAnswersStorageName,
+            highScoreStorageName,
+            seenAnswers,
+            wrongGuesses,
+            strikeCount,
+            score,
+            highScore,
+            maxStrikes,
+            lockGame,
+            difficultySelected
+        }),
+        setGameState: (state) => {
+            if (state.chosenDifficulty !== undefined) chosenDifficulty = state.chosenDifficulty;
+            if (state.seenAnswersStorageName !== undefined) seenAnswersStorageName = state.seenAnswersStorageName;
+            if (state.highScoreStorageName !== undefined) highScoreStorageName = state.highScoreStorageName;
+            if (state.seenAnswers !== undefined) seenAnswers = state.seenAnswers;
+            if (state.wrongGuesses !== undefined) wrongGuesses = state.wrongGuesses;
+            if (state.strikeCount !== undefined) strikeCount = state.strikeCount;
+            if (state.score !== undefined) score = state.score;
+            if (state.highScore !== undefined) highScore = state.highScore;
+            if (state.maxStrikes !== undefined) maxStrikes = state.maxStrikes;
+            if (state.lockGame !== undefined) lockGame = state.lockGame;
+            if (state.difficultySelected !== undefined) difficultySelected = state.difficultySelected;
+        },
+        // Direct access to DOM for testing
+        getDOM: () => DOM,
+        setDOM: (newDOM) => { DOM = newDOM; }
+    };
 }

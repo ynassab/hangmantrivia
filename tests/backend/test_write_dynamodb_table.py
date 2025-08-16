@@ -12,8 +12,10 @@ from unittest import mock
 from moto import mock_aws
 import boto3
 
-# The module to test
-from backend.db_management import write_dynamodb_table
+TEST_AWS_ACCOUNT_ID = '123456789012'
+# Patch the environment variable before importing the module
+with mock.patch.dict(os.environ, {'AWS_ACCOUNT_ID': TEST_AWS_ACCOUNT_ID}):
+    from backend.db_management import write_dynamodb_table
 
 TABLE_NAME_NORMAL = 'hangmantrivia-wordbank-normal'
 TABLE_NAME_HARD = 'hangmantrivia-wordbank-hard'
@@ -27,7 +29,6 @@ AWS_REGION = 'us-east-1'
 TEST_KEY_ID = 'test-key-id'
 TEST_SECRET_KEY = 'test-secret-key'
 TEST_SESSION_TOKEN = 'test-session-token'
-TEST_AWS_ACCOUNT_ID = '123456789012'
 
 class TestWriteDynamoDBTable:
     """Test cases for the database management script."""

@@ -31,7 +31,7 @@ testing = [
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["backend"]
+include = ["backend*"]
 
 [tool.pytest.ini_options]
 addopts = "--cov=backend --cov-report=term-missing"
